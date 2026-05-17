@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozo</title>
+    <meta name="description" content="Meet our team of designers, engineers, and researchers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Three.js Canvas -->
+    <canvas id="three-canvas"></canvas>
+    
+    <div class="container" id="home">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="bozo-logo.png" alt="Bozo Logo">
+        </div>
+        
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+
+        <!-- Geometric Background Elements -->
+        <div class="geometric-elements">
+            <div class="circle large-circle"></div>
+            <div class="circle small-circle"></div>
+            <div class="curve-line"></div>
+            <div class="cross cross-1"></div>
+            <div class="cross cross-2"></div>
+            <div class="dimension-label">247 x 56</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="hero-section">
+            <h1 class="hero-title">
+                <svg id="bozo-text" viewBox="0 0 5000 1600" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Simple gradient -->
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="bozo-svg-text">Bozo</text>
+                </svg>
+            </h1>
+            
+            <p class="hero-description">
+                Transforming raw footage into cinematic masterpieces<br>
+                through creative editing and visual storytelling.
+            </p>
+
+            <nav class="navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#short-video" class="nav-link">Short Video</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </main>
+    </div>
+
+    <!-- Featured Projects Section -->
+    <section class="content-section featured-videos-section" id="featured-videos">
+        <div class="section-content">
+            <div class="featured-videos-badge">
+                <span class="badge-line"></span>
+                <span class="badge-text">Projects</span>
+                <span class="badge-line"></span>
+            </div>
+            <h2 class="section-title featured-videos-title" style="text-align: center; margin-bottom: 40px;">
+                Motion design <span class="highlight-cursive">Projects</span>
+            </h2>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" aria-label="Previous video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-track">
+                <div class="carousel-item item-left">
+                    <iframe src="https://www.youtube-nocookie.com/embed/KcsZhwqaNQc?controls=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item item-center">
+                    <iframe src="https://www.youtube-nocookie.com/embed/mBu7r5gKU68?controls=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item item-right">
+                    <iframe src="https://www.youtube-nocookie.com/embed/kykpGh08Lrw?controls=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" aria-label="Next video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Scrollable Content Sections -->
+    <section class="content-section section-1" id="short-video">
+        <div class="section-content">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px; font-weight: bold;">
+                Short form <span class="highlight-cursive">Content</span>
+            </h2>
+        </div>
+        
+        <!-- 3D Coverflow Video Carousel -->
+        <div class="short-carousel-container">
+            <div class="short-carousel-track">
+                <!-- Important Shorts -->
+                <div class="short-item" data-video-id="PkdY6y-9Fok">
+                    <img src="https://img.youtube.com/vi/PkdY6y-9Fok/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="RL4wbbsIhnY">
+                    <img src="https://img.youtube.com/vi/RL4wbbsIhnY/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="I7CYTGNqMns">
+                    <img src="https://img.youtube.com/vi/I7CYTGNqMns/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="BM7eRCZQ59k">
+                    <img src="https://img.youtube.com/vi/BM7eRCZQ59k/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="J2Al095fnTQ">
+                    <img src="https://img.youtube.com/vi/J2Al095fnTQ/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="XF8QgthO7Mo">
+                    <img src="https://img.youtube.com/vi/XF8QgthO7Mo/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="NFAvbL_Eh58">
+                    <img src="https://img.youtube.com/vi/NFAvbL_Eh58/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="TvpOkXaE2pg">
+                    <img src="https://img.youtube.com/vi/TvpOkXaE2pg/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="WMf8qkJkXNI">
+                    <img src="https://img.youtube.com/vi/WMf8qkJkXNI/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="htQmM-PbMKM">
+                    <img src="https://img.youtube.com/vi/htQmM-PbMKM/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="QrdKyea6utw">
+                    <img src="https://img.youtube.com/vi/QrdKyea6utw/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="xzZjOveSiIA">
+                    <img src="https://img.youtube.com/vi/xzZjOveSiIA/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+                <div class="short-item" data-video-id="_NSQl4e7jvY">
+                    <img src="https://img.youtube.com/vi/_NSQl4e7jvY/maxresdefault.jpg" alt="Video thumbnail" class="video-thumbnail">
+                    <div class="video-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
+            </div>
+            
+            <!-- Global Overlay UI for Carousel Controls -->
+            <div class="short-controls">
+                <button class="short-carousel-btn short-prev" aria-label="Previous video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="short-carousel-btn short-next" aria-label="Next video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+            <div class="short-pagination-dots">
+                <span class="s-dot"></span>
+                <span class="s-dot"></span>
+                <span class="s-dot active"></span>
+                <span class="s-dot"></span>
+                <span class="s-dot"></span>
+            </div>
+        </div>
+        
+        <!-- Google Drive Section -->
+        <div class="drive-section">
+            <div class="drive-header">
+                <svg class="drive-icon" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg">
+                    <path class="drive-path" d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#666666" data-color="#0066da"/>
+                    <path class="drive-path" d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#666666" data-color="#00ac47"/>
+                    <path class="drive-path" d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#666666" data-color="#ea4335"/>
+                    <path class="drive-path" d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#666666" data-color="#00832d"/>
+                    <path class="drive-path" d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#666666" data-color="#2684fc"/>
+                    <path class="drive-path" d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#666666" data-color="#ffba00"/>
+                </svg>
+                <h3 class="drive-title">More Works on Google Drive</h3>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1HiQttK8LDnPqjREZnyfIpCqy6YBIgS_o" target="_blank" class="drive-link">
+                <span class="drive-link-text">View All Projects</span>
+                <svg class="drive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Our Clients Section -->
+    <section class="content-section clients-section" id="clients">
+        <div class="section-content">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">
+                Our <span class="highlight-cursive">Clients</span>
+            </h2>
+        </div>
+        <div class="clients-slider">
+            <div class="clients-track">
+                <!-- Group 1 -->
+                <img src="clint-logos/1.png" alt="Client Logo 1" class="client-logo">
+                <img src="clint-logos/2.png" alt="Client Logo 2" class="client-logo">
+                <img src="clint-logos/3.png" alt="Client Logo 3" class="client-logo">
+                <img src="clint-logos/4.png" alt="Client Logo 4" class="client-logo">
+                <img src="clint-logos/5.png" alt="Client Logo 5" class="client-logo">
+                <img src="clint-logos/6.png" alt="Client Logo 6" class="client-logo">
+                <img src="clint-logos/7.png" alt="Client Logo 7" class="client-logo">
+                <img src="clint-logos/8.png" alt="Client Logo 8" class="client-logo">
+                <img src="clint-logos/9.png" alt="Client Logo 9" class="client-logo">
+                <!-- Group 2 (Cloned for infinite seamless loop) -->
+                <img src="clint-logos/1.png" alt="Client Logo 1" class="client-logo">
+                <img src="clint-logos/2.png" alt="Client Logo 2" class="client-logo">
+                <img src="clint-logos/3.png" alt="Client Logo 3" class="client-logo">
+                <img src="clint-logos/4.png" alt="Client Logo 4" class="client-logo">
+                <img src="clint-logos/5.png" alt="Client Logo 5" class="client-logo">
+                <img src="clint-logos/6.png" alt="Client Logo 6" class="client-logo">
+                <img src="clint-logos/7.png" alt="Client Logo 7" class="client-logo">
+                <img src="clint-logos/8.png" alt="Client Logo 8" class="client-logo">
+                <img src="clint-logos/9.png" alt="Client Logo 9" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section section-2" id="about" id="about-section">
+        <div class="section-content about-content">
+            <div class="about-header-wrapper">
+                <img src="adobe-pre.png" alt="Adobe Premiere Pro" class="software-icon pr-icon title-icon" title="Adobe Premiere Pro">
+                <h2 class="section-title about-title">About Me</h2>
+                <img src="after-ef.png" alt="Adobe After Effects" class="software-icon ae-icon title-icon" title="Adobe After Effects">
+            </div>
+            <div class="about-description">
+                <h3 class="about-role">Video Editor & Motion Designer</h3>
+                <p class="about-text">
+                    Professional video editor with <strong>7+ years of experience</strong> specializing in motion graphics, 
+                    gaming content, and trending storytelling. I transform ideas into captivating visual experiences 
+                    that engage audiences across all platforms.
+                </p>
+                <p class="about-text">
+                    From <em>YouTube content</em> to <em>commercial projects</em>, I deliver high-quality, 
+                    creative videos that stand out. Expert in Adobe Premiere Pro, After Effects, DaVinci Resolve, 
+                    and the latest editing techniques.
+                </p>
+                <p class="about-text about-cta">
+                    Ready to bring your vision to life with stunning visuals and seamless storytelling!
+                </p>
+            </div>
+        </div>
+        <!-- 3D Icons Container -->
+        <canvas id="about-canvas"></canvas>
+    </section>
+
+    <section class="content-section section-3" id="contact">
+        <div class="section-content contact-content">
+            <h2 class="section-title contact-title">Get In Touch</h2>
+            <p class="section-text contact-subtitle">Let's create something amazing together</p>
+            
+            <div class="contact-grid">
+                <!-- Phone -->
+                <a href="tel:01140240037" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-label">Phone</h3>
+                        <p class="contact-value">01140240037</p>
+                    </div>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:ahmadzed25@gmail.com" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-label">Email</h3>
+                        <p class="contact-value">ahmadzed25@gmail.com</p>
+                    </div>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/snpbozo/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-label">Instagram</h3>
+                        <p class="contact-value">@snpbozo</p>
+                    </div>
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@snpbozo?lang=en" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-label">TikTok</h3>
+                        <p class="contact-value">@snpbozo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
